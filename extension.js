@@ -52,8 +52,8 @@ function activate(context) {
 		vscode.window.activeTextEditor.edit((editBuilder) =>
 			editBuilder.insert(
 				vscode.window.activeTextEditor.selection.active,
-				'```{r ${searchQuery}, echo = FALSE, fig.cap = "", fig.align="center"} \n' +
-				'knitr::include_graphics("figures/${searchQuery}.png") \n' +
+				`\`\`\`{r ${searchQuery}, echo = FALSE, fig.cap = "", fig.align="center"} \n` +
+				`knitr::include_graphics("figures/${searchQuery}.png") \n` +
 				'```'
 			)
 		);

@@ -2,8 +2,12 @@
 	"name": "krita-rmd",
 	"displayName": "Krita-rmd",
 	"description": "",
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"publisher": "Zentrik",
+	"repository": {
+		"type": "github",
+		"url": "https://github.com/Zentrik/krita-rmd"
+	  },
 	"engines": {
 		"vscode": "^1.60.0"
 	},
