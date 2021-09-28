@@ -25,8 +25,8 @@ function activate(context) {
 		}
 
 		const searchQuery = await vscode.window.showInputBox({
-			placeHolder: "Search query",
-			prompt: "Search my snippets on Codever",
+			placeHolder: "Figure Name",
+			prompt: "Type a name for your figure",
 		  });
 
 		if (searchQuery === '' || searchQuery === undefined){
@@ -59,7 +59,7 @@ function activate(context) {
 		);
 
 		const terminal = vscode.window.createTerminal();
-		terminal.sendText('"C:/Program Files/Krita (x64)/bin/krita.exe" "' + test + '" & exit');
+		terminal.sendText(`"${test}" & exit`);
 		// terminal.dispose();
 	});
 
