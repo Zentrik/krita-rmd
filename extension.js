@@ -34,15 +34,16 @@ function activate(context) {
 		}
 
 		const wsPath = vscode.window.activeTextEditor.document.uri.fsPath // path to file in active editor
+		const FolderPath = wsPath.substr(0,  wsPath.lastIndexOf("\\")); // path to folder of active file
 
-		if (!wsPath.includes("/") && !wsPath.includes("\\") ) { // check if file is unsaved
+		if (!FolderPath.includes("/") && !FolderPath.includes("\\") ) { // check if file is unsaved
 			return;
 		}
 
-		const test = wsPath + '/../figures/' + searchQuery + '.kra'
+		const test = FolderPath + '/figures/' + searchQuery + '.kra'
 		const filePath = vscode.Uri.file(test); // path of image
 
-		const templatePath = vscode.Uri.file('C:/Users/rag/Pictures/Template.kra') // path to template
+		const templatePath = vscode.Uri.file(vscode.workspace.getConfiguration('krita-rmd').templateFile) // path to template
 
 		vscode.workspace.fs.copy(templatePath, filePath, { overwrite: false }) // copy template to image file
 

@@ -2,7 +2,7 @@
 	"name": "krita-rmd",
 	"displayName": "Krita-rmd",
 	"description": "",
-	"version": "0.0.3",
+	"version": "0.0.4",
 	"publisher": "Zentrik",
 	"repository": {
 		"type": "github",
@@ -24,7 +24,17 @@
 				"command": "krita-rmd.createFigure",
 				"title": "Create Figure"
 			}
-		]
+		],
+		"configuration": {
+			"title": "krita-rmd",
+			"properties": {
+			  "krita-rmd.templateFile": {
+				"type": "string",
+				"default": "",
+				"description": "Template File"
+			  }
+			}
+		}
 	},
 	"scripts": {
 		"lint": "eslint .",
